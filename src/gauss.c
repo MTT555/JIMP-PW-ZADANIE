@@ -1,4 +1,5 @@
 #include "gauss.h"
+#include <stdio.h>
 
 /**
  * Zwraca 0 - elimnacja zakonczona sukcesem
@@ -22,6 +23,7 @@ int eliminate(Matrix *mat, Matrix *b){
 			b->data[wiersze][0] -= mnoznik * b->data[kolumny][0];
 		}
 	}
+		printf("Stan po schodkowaniu: \n");
 		printToScreen(mat);
 		return 0;
 }

@@ -13,14 +13,17 @@ int main(int argc, char ** argv) {
 
 	if (A == NULL) return -1;
 	if (b == NULL) return -2;
+
+	printf("Wyswietlam macierz A: \n");
 	printToScreen(A);
+	printf("Wyswietlam macierz B: \n");
 	printToScreen(b);
 
 	res = eliminate(A,b);
 	x = createMatrix(b->r, 1);
 	if (x != NULL) {
 		res = backsubst(x,A,b);
-
+		printf("Wyswietlam wyniki eliminacji Gaussa(macierz z wynikami): \n");
 		printToScreen(x);
 	  freeMatrix(x);
 	} else {
